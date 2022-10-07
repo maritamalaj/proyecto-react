@@ -8,7 +8,7 @@ export default function CartWidget() {
         <img src={Cart} alt="Cart" />
       </div>
       <div className="counter">
-        <span>3</span>
+        {3}
       </div>
     </div>
   );

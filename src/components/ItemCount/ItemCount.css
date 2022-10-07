@@ -1,0 +1,14 @@
+.contador{
+    width: fit-content;
+    background-color: rgba(128, 128, 128, 0.369);
+    margin: auto;
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction:row;
+    justify-content:  center;
+    border-radius: 5px;
+}
+.elements {
+    margin:10px;
+}

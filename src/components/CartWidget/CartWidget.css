@@ -4,6 +4,10 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    
+}
+div.App{
+    background-color: #d8a79074;
 }
 
 .widget {
@@ -15,6 +19,7 @@
 .widget img {
     width: 40px;
     height: 40px;
+    color:aliceblue;
 }
 
 .counter {

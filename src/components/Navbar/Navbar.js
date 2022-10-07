@@ -1,4 +1,4 @@
-import "./navbar.css";
+import "./Navbar.css";
 import logo from "./assets/logo.png";
 import CartWidget from "../CartWidget/CartWidget"
 export default function Navbar() {
