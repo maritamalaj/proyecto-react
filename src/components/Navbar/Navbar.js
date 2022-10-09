@@ -1,29 +1,31 @@
 import "./Navbar.css";
 import logo from "./assets/logo.png";
-import CartWidget from "../CartWidget/CartWidget"
-export default function Navbar() {
+import { Link } from "react-router-dom"
+
+
+const Navbar=() =>{
     return(
       <div>
       <header>
+     
         <div className="img-logo">
-          <img src={logo} alt="logo" />
+          <img src={logo} alt="logo" width="150" />
         </div>
         <nav>
           <ul>
             <li>
-              <a href="">Inicio</a>
+              <a href="#">Inicio</a>
             </li>
             <li>
-              <a href="">Productos</a>
+            <Link to={"/"}>Productos</Link>
             </li>
             <li>
-              <a href="">Contáctanos</a>
+              <a href="#">Contáctanos</a>
             </li>
-            <li className="Cart">
-              <a href="">
-              <CartWidget />
-              </a>
-            </li>
+            <div className="Cart">
+              <box-icon color="white"name="cart-alt"></box-icon>
+              <span className="item_total">1</span>
+            </div>
           </ul>
         </nav>
       </header>
@@ -31,4 +33,4 @@ export default function Navbar() {
 
     );
 }
-
+export default Navbar

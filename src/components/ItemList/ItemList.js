@@ -2,12 +2,15 @@
 import Item from "../Item/Item";
 import './ItemList.css'
 
-const IitemLlist= ({products, setPage}) =>{
+const ItemLlist= ({products, setPage}) =>{
+
   return(
-       <div className ="cardConteiner" onClick={() => console.log('hice click en itemlist')}>
-       {products.map(prod => <Item key={prod.id} {...prod} setPage={setPage}/>)}
+       <div className ="cardConteiner" >
+       {products.map(prod => <Item key={prod.id} id={prod.id} {...prod} setPage={setPage}/>)}
        </div>
       ) 
 
 } 
-export default IitemLlist
+export default ItemLlist
+
+

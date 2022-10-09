@@ -1,82 +1,82 @@
 const products = [
     {
-        id: 1,
+        id: '1',
     name: 'Espejo Mariam',
     price:2900,
     category: 'espejos',
     img: '/images/espejoredoyute.jpeg',
     stock: 5,
-    description: 'Descripcion de espejo de Yute',
+    description: 'Descripción: Espejo tejido en Yute 40cm',
     },
 
     {
-        id: 2,
+        id: '2',
     name: 'Espejo Amalia',
     price:2900,
     category: 'espejos',
     img: '/images/espejomacrame.jpeg',
     stock: 5,
-    description: 'Descripcion de espejo de macrame',
+    description: 'Descripción: Espejo tejido en macramé natural 40cm',
     },
 
     {
-        id: 3,
+        id: '3',
     name: 'Pie de cama',
     price:5000,
     category: 'Habitacion',
     img: '/images/piecama.jpeg',
     stock: 5,
-    description: 'descripcion de pie de cama',
+    description: 'Descripción: Pie de cama en tusro estampado y borlas en hilo de algodón 100x50 cm',
     },
 
     {
-        id: 4,
+        id: '4',
     name: 'Almohadas Boho',
     price:3000,
     category: 'Habitacion',
     img: '/images/almohadas.jpeg',
     stock: 5,
-    description: 'descripcion de almohada deco'
+    description: 'Descripción Almohadon deco tela de tusro y detalles en lentejuelas 40x20 cm'
     },
     
     {
-        id: 5,
+        id: '5',
     name: 'Frasco Marie',
     price:1900,
     category: 'deco bazar',
     img: '/images/frascomacrame.jpeg',
     stock: 5,
-    description: 'descripcion de frasco macrame',
+    description: 'Descripción frasco de vidriio, tejido en macrame 30x10 cm',
     },
 
 
     {
-        id: 6,
+        id: '6',
     name: 'Colgante Alice',
     price:3000,
     category: 'deco',
-    img: 'images/colgantemacrame.jpeg',
+    img: '/images/colgantemacrame.jpeg',
     stock: 5,
-    description: 'descripcion de colgante macrame',
+    description: 'Descripción: colgante  de macramé 15x30 cm',
     },
     {
-        id: 7,
+        id: '7',
     name: 'Cesto Belice',
     price:2000,
     category: 'deco',
     img: '/images/cestomacrame.jpeg',
     stock: 5,
-    description: 'descripcion de cesto deco',
+    description: 'Descripción: Cesto en macrame bicolor 20x20 cm',
     },
 
     {
-        id: 8,
+        id: '8',
     name: 'Individuales Emilie',
     price:3000,
     category: 'deco',
     img: '/images/individualesmacrame.jpeg',
     stock: 5,
-    description: 'descripcion de individuales deco'
+    description: 'Descripción Individuales tejido en macramé natural 20cm'
     },
 
 ]
