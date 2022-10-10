@@ -17,7 +17,7 @@
 }
 .productos{
     padding: 5rem 1rem;
-    margin: 0 auto;
+    margin: 103px auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
     gap: 3rem 2rem;
@@ -93,7 +93,7 @@
   
 }
 div.bottom {
-    background-color:rgba(104, 98, 98, 0.409);
+    background-color:rgba(20, 19, 19, 0.257);
     display: grid;
     align-items: center;
     text-align: center;

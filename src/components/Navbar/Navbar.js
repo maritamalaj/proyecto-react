@@ -1,10 +1,53 @@
 import "./Navbar.css";
 import logo from "./assets/logo.png";
 import { Link } from "react-router-dom"
+import CartWidget from "../CartWidget/CartWidget"
+
+const Navbar = () => {
+  return (
+<nav className="container-nav">
+      <div className="branding">
+        <img src={logo} alt="logo" width="150" className="logo-logo"/>
+        <span className="">
+          Deco&Design
+        </span>
+      </div>
+      <div className="nav-paths ">
+        <Link to="/" className="">
+           Home
+        </Link>
+        <Link to="/category/Espejos" className="">
+           . Espejos
+        </Link>
+        <Link to="/category/Habitación" className="">
+           . Deco&Habitación
+        </Link>
+        <Link to="/category/Deco" className="">
+          . Deco&Bazar
+        </Link>
+        <CartWidget />
+      </div>
+    </nav>
+  );
+}
+ export default Navbar
 
 
-const Navbar=() =>{
-    return(
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+   /* return(
       <div>
       <header>
      
@@ -29,8 +72,8 @@ const Navbar=() =>{
           </ul>
         </nav>
       </header>
-    </div>
+    </div>*/
 
-    );
-}
-export default Navbar
+  
+
+

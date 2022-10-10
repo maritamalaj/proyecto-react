@@ -5,7 +5,7 @@ import './ItemListContainer.css'
 import { useParams } from 'react-router-dom'
 import Loader from '../Loader/Loader';
 
-const ItemListContainer=({greeting})=> {
+const ItemListContainer=()=> {
   const[products, setProducts]=useState([])
   const [loading, setLoading] = useState (true)
 
@@ -16,8 +16,6 @@ const ItemListContainer=({greeting})=> {
       
     asyncFunction (categoryId).then(response =>{
         setProducts (response)
-      }).catch(error => {
-        console.log(error)
       }).finally(()=>{
           setLoading (false)
       }) 
@@ -31,7 +29,7 @@ const ItemListContainer=({greeting})=> {
 
   return (
       <div className='itemListContainer-container'>
-        <h1>{categoryId ? "lista de " + categoryId : "lista de Productos"}</h1>
+        <h1>{categoryId ? "lista de " + categoryId : "Lista de Productos"}</h1>
         <ItemList products={products}/>
         
       </div>

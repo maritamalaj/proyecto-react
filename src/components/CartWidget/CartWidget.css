@@ -1,40 +1,17 @@
-.container-widget {
-    width: 80%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    
-}
-div.App{
-    background-color: #d8a79074;
+
+.carrito {
+    font-weight: bolder;
+    color: white;
+    margin-right: 10rem;
 }
 
-.widget {
-    width: 100%;
-    background-color: #d8a790;
-    color: aliceblue;
+.carrito button {
+    background: rgba(155, 153, 153, 0.712);
+    padding-right: 0.7rem;
+    border-radius: 40px ;
+    float: right;
 }
 
-.widget img {
-    width: 40px;
-    height: 40px;
-    color:aliceblue;
-}
-
-.counter {
-    width: 100%;
-
-}
-
-.counter span {
-    position: absolute;
-    right: 67px;
-    top: 26px;
-}
-
-.img{
-   
-    background-color: #d8a790;
-    color:aliceblue
+.imagenCarrito {
+    width: 1.8rem;
 }
