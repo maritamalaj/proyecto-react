@@ -13,19 +13,20 @@ const Navbar = () => {
         </span>
       </div>
       <div className="nav-paths ">
-        <Link to="/" className="">
+        <Link to="/" className="nav-paths-items">
            Home
         </Link>
-        <Link to="/category/Espejos" className="">
-           . Espejos
+        <Link to="/category/Espejos" className="nav-paths-items">
+            Espejos
         </Link>
-        <Link to="/category/Habitación" className="">
-           . Deco&Habitación
+        <Link to="/category/Habitación" className="nav-paths-items">
+            Deco&Habitación
         </Link>
-        <Link to="/category/Deco" className="">
-          . Deco&Bazar
+        <Link to="/category/Deco" className="nav-paths-items">
+          Deco&Bazar
         </Link>
         <CartWidget />
+        <span className=""></span>
       </div>
     </nav>
   );

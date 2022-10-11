@@ -16,16 +16,16 @@
    
 }
 .productos{
-    padding: 5rem 1rem;
-    margin: 103px auto;
+    padding: 2rem 1rem;
+    margin: 8px auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(23rem, 2fr));
     gap: 3rem 2rem;
     box-sizing: border-box ;
 } 
 .producto{
     display: flex;
-    width: 100%;
+    width: 290px;
     flex-direction: column;
     align-items: center;
     box-shadow: 1px 10px 10px 2px rgba(0, 0, 0, 0.1);
@@ -38,7 +38,8 @@
     ;
 }
 .producto__img img{
-    width: 310px;
+    width: 220px;
+    height: 300px;
 }
 .producto__footer{
     padding: 1rem;

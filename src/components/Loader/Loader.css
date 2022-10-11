@@ -2,11 +2,12 @@
     transform: rotateZ(45deg);
     perspective: 1000px;
     border-radius: 50%;
-    width: 48px;
-    height: 48px;
-    color: #fff;
+    color: #d8a790;
     margin: auto;
+    width: 80px;
+    height: 80px;
 }
+  
 .loader:before, .loader:after {
     content: '';
     display: block;

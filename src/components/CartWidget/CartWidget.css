@@ -7,9 +7,10 @@
 
 .carrito button {
     background: rgba(155, 153, 153, 0.712);
-    padding-right: 0.7rem;
+    padding-right: 1rem;
     border-radius: 40px ;
     float: right;
+   
 }
 
 .imagenCarrito {
