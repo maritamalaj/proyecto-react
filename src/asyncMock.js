@@ -80,6 +80,11 @@ const products = [
     },
 
 ]
+products.forEach (async prod => {
+    await addDoc (collection (db, 'products'))
+})
+
+
 export const getProducts = ()=> {
     return new Promise((resolve) => {
         setTimeout (() => {
