@@ -1,22 +1,28 @@
 import Cart from "./assets/shoppcart.png";
 import "./CartWidget.css";
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 import {  useContext } from "react";
-import {CartContext} from '../../Context/CartContext'
+import {CartContext} from '../../CartContext/CartContext'
+
 
 export default function CartWidget() {
     
-    const {totalQuantity}=useContext (CartContext)
-    const quantity =  totalQuantity
+    const {totalQuantity, total }=useContext (CartContext)
+    //const quantity =  totalQuantity
+  
+    
+
 
   return (
-    <Link to={"/cart"} className = "carrito">
+    <NavLink to={"/cart"} className = "carrito" >
         <button>
             <img className = "imagenCarrito" src={Cart} alt="carrito"/>
-            <span id="contador1">{quantity}</span>
-          
+            <span id="contador1">{totalQuantity}</span>
+            <div id="cartTotalPrice">
+            ${total}
+            </div>
         </button>  
-    </Link>
+    </NavLink>
 )
 }
   

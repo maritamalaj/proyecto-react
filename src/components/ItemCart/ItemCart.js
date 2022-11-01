@@ -5,7 +5,9 @@ import {CartContext}from '../../Context/CartContext'
 const ItemCart= ({id, name, price, img, quantity})=>{
     const {removeItem} = useContext (CartContext)
     
-    
+    const handleRemove = (id) => {
+        removeItem(id)
+    }
 
     return (
         <tr className="productoEnCarrito">
@@ -14,7 +16,8 @@ const ItemCart= ({id, name, price, img, quantity})=>{
             <td className="precioCarrito">$ {price}</td>
             <td className="cantidad">{quantity}</td>
             <td className="precioTotalCarrito">$ {price * quantity}</td>
-            <td><input onClick={() => removeItem()} className="btn botonEliminar" type="button" value="Eliminar"/></td>
+            <button className='ButtonCartItem' onClick={() => handleRemove(id)}>Eliminar</button>
+          
         </tr>
     )
 }

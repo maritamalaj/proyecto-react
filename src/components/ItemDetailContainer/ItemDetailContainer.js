@@ -1,51 +1,46 @@
 import './ItemDetailContainer.css'
 import ItemDetail from '../ItemDetail/ItemDetail';
-import { getFirestore, doc, getDoc } from 'firebase/firestore';
-import { useState, useEffect } from 'react';
+import {useAsync} from '../../hooks/useAsync'
 import Loader from '../Loader/Loader';
-import { useParams } from 'react-router-dom'
+import { useParams} from 'react-router-dom'
+import { getProductById } from '../../services/firestore/products';
 
 const ItemDetailContainer = () => {
-  const [products, setProducts] = useState([])
-  const [loading, setLoading] = useState(false)
+
+
   const { productId } = useParams()
 
-  useEffect(() => { //traigo fstore almaceno en una variable
-    const querydb = getFirestore();
-    const queryDoc = doc (querydb, 'products', productId); //con un puntero cargo los datos q quiero traer
-    getDoc(queryDoc)// lo traigo
-    .then (res => setProducts({ id: res.id, ...res.data()}))  //
-    .finally (()=>{
-      setLoading(false)
-    })
+  console.log(productId)
 
-    
-  
-  },[productId])
-
-  if (loading) {
-    return <div className='spinner'>  <Loader
-        size={60}
-
-        speed={1}
+  const getProductsWithCategory = () => getProductById(productId)
+  const { data: products, error, loading } = useAsync(getProductsWithCategory, [productId])
 
 
-    />
-    </div>
+
+  if(loading) {
+    return     <Loader />
 
 }
-return (
-    <div>
-        <ItemDetail  {...products} />
 
-    </div>
+if(error) {
+  return <h1>Hubo un error...</h1>
+}
+
+return (
+  <div className='ItemDetailContainer' >
+      <ItemDetail key= {products.id} {...products} />
+     
+  </div>
 )
 }
 
-export default ItemDetailContainer;
+export default ItemDetailContainer
 
 
-     
+
+
+
+
 
 
 
@@ -57,34 +52,3 @@ export default ItemDetailContainer;
 
 
 
-
-/*const ItemDetailContainer = () => {
-  const [product, setProduct] = useState([])
-  const [loading, setLoading] = useState(false)
-  const { productId } = useParams()
-  
-
-    useEffect(() => {
-        getProductById(productId)
-           .then((response)=>setProduct(response))
-           .catch((error) => console.log(error))
-           .finally(()=>{
-            setLoading(true);
-        })
-    }, [productId])
-
-    
-
-   return (
-    <div className='itemDetailContainer'>
-      {loading? (
-    
-        <ItemDetail key={product.id} {...product} />
-      ):(
-        <Loader/>
-      )}
-      </div>
-  )
-}
-
-export default ItemDetailContainer;*/

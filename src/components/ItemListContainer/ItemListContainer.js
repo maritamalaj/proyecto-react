@@ -1,17 +1,40 @@
-import { useState, useEffect } from 'react';
+
 import ItemList from '../ItemList/ItemList'
 import './ItemListContainer.css'
 import { useParams } from 'react-router-dom'
 import Loader from '../Loader/Loader';
-import {getDocs, collection, query, where} from 'firebase/firestore'
+import {useAsync} from '../../hooks/useAsync'
+import {getProducts} from '../../services/firestore/products'
 import './ItemListContainer.css';
-import {db} from '../../services/firebase'
- //import swal from 'sweetalert'
 
 
 
 
-const ItemListContainer = ({greeting}) => {
+ const ItemListContainer = () => {
+  const { categoryId } = useParams()
+
+  const getProductsWithCategory = () => getProducts(categoryId)
+
+  const { data: products, error, loading } = useAsync(getProductsWithCategory, [categoryId])
+
+
+  if(loading) {
+        return     <Loader />
+  }
+
+  if(error) {
+      return <h1>Hubo un error...</h1>
+  }
+
+  return (
+      <div>
+          <h1>{}</h1>
+          <ItemList products={products} />
+      </div>
+  )
+}
+
+/*const ItemListContainer = () => {
 
   const[products, setProducts]=useState([])
   const { categoryId } = useParams()
@@ -55,15 +78,15 @@ const ItemListContainer = ({greeting}) => {
 return (
     <div>
       {greeting}
-      {loading ? (
-      /*<h1>{categoryId ? "  " + categoryId : "Lista de Productos"}</h1>*/
+      {!loading ? (
+     
       <ItemList products={products}/>
       ):(
        <Loader/ >
       )}
     </div>
   );
-};
+};*/
 export default ItemListContainer;
 
 

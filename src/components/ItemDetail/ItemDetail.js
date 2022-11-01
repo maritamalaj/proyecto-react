@@ -1,29 +1,30 @@
 import './ItemDetail.css'
 import ItemCount from '../ItemCount/ItemCount'
-import { useState } from 'react'
 import {Link} from 'react-router-dom'
 import { useContext } from 'react'
-import {CartContext} from '../../Context/CartContext'
+import {CartContext} from '../../CartContext/CartContext'
+//import swal from 'sweetalert'
 
 const ItemDetail = ({ id, name, img, category, description, price, stock}) => {
-    const [goCart, setGoCart] = useState (false)
+    //const [goCart, setGoCart] = useState (false)
 
-    const { addItem, getProductQuantity } = useContext(CartContext)
+    const { addItem, isInCart, getProductQuantity } = useContext(CartContext)
 
 
 
     const handleOnAdd = (quantity) => {
-        setGoCart (true)
+       // setGoCart (true)
         const productToAdd = {
-            id, name, price, img,quantity
+            id, name, price, img
+            //agregar SWEETALRERT! ('success', `Se agrego correctamente ${quantity} ${name}`)
         }
     
-        addItem (productToAdd)
+        addItem (productToAdd, quantity)
        
       
     }
     
-    const quantityToAdded = getProductQuantity (id)
+    const quantityAdded = getProductQuantity (id)
     
     
     
@@ -44,7 +45,32 @@ const ItemDetail = ({ id, name, img, category, description, price, stock}) => {
                 <h4><span className='detalleAtributo'>Stock:</span> {stock}</h4>
                 <h4><span className='detalleAtributo'>Categoría:</span> {category}</h4>
             </div>
+            <footer className='ItemFooter'>
+                { stock !== 0 ? <ItemCount onAdd={handleOnAdd} stock={stock} initial={quantityAdded} category={category} />
+                : <p>No hay stock</p>}
+                {
+                    
+                        isInCart(id) && <Link to='/cart' className='Option' style={{ backgroundColor: 'grey'}}>Finalizar compra</Link>
+                }
+                
+            </footer>
 
+
+            
+    
+   
+        </div>
+    </article>
+  )
+}
+
+
+  
+  export default ItemDetail
+
+
+
+  /*
             {goCart ? 
             <div className='detalleBotonera'>
             <Link to='/'>
@@ -55,14 +81,4 @@ const ItemDetail = ({ id, name, img, category, description, price, stock}) => {
             </Link>
         </div>
         :
-        <div className='contadorDetalle'> <ItemCount  onAdd={handleOnAdd} initial={quantityToAdded} stock={stock} /> </div>
-    }
-   
-        </div>
-    </article>
-  )
-}
-
-
-  
-  export default ItemDetail
+        <div className='contadorDetalle'> <ItemCount  onAdd={handleOnAdd} initial={quantityToAdded} stock={stock} /> </div>*/
