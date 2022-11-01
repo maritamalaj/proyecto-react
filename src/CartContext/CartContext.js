@@ -8,18 +8,18 @@ export const CartContext = createContext({
 export const CartProvider = ({children})=>{
     const [cart, setCart] = useState([])
     const [totalQuantity, setTotalQuantity] = useState(0)
-    const [total, setTotal] = useState(0)
+
   
     
     useEffect (() =>{
        const totalQty = getQuantity()
         setTotalQuantity (totalQty) 
-    }, [cart])// eslint-disable-next-line
+    }, [cart])// eslint-disable-line
 
-    useEffect(() => {
+    /*useEffect(() => {
         const total = getTotal()
         setTotal(total)
-    }, [cart])// eslint-disable-next-line
+    }, [cart])// eslint-disable-next-line*/
 
    
     const addItem = (productToAdd,) => {
@@ -88,7 +88,7 @@ export const CartProvider = ({children})=>{
  
 
  return (
-        <CartContext.Provider value={{ cart, total, getTotal, addItem, removeItem, totalQuantity, getProductQuantity, clearCart, isInCart, getQuantity}}>
+        <CartContext.Provider value={{ cart,  getTotal, addItem, removeItem, totalQuantity, getProductQuantity, clearCart, isInCart, getQuantity}}>
         {children}
          </CartContext.Provider>
     )

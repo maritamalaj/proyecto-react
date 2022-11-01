@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom"
 const Checkout = () => {
     const [loading, setLoading] = useState(false)
 
-    const { cart, total, clearCart } = useContext(CartContext)
+    const { cart, totalQuantity, clearCart } = useContext(CartContext)
 
  
     const [name, setName] = useState("");
@@ -38,7 +38,7 @@ const Checkout = () => {
                     coments:{coments},
                 },
                 items: cart,
-                total: total
+                total: totalQuantity,
             }
             
             const batch = writeBatch(db)
