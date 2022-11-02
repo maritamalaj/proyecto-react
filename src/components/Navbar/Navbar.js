@@ -40,10 +40,9 @@ const Navbar = () => {
       </div>
       <div className="nav-paths ">
         {
-          categories.map(cat=>(
+          categories.map(category=>(
         
-         <NavLink key={cat.id} to={`/category/${cat.slug}`} className={({ isActive}) => isActive ? 'ActiveOption' : 'Option'}><img src={cat.img} alt={cat.alt} className="nav-paths-items"/>
-         </NavLink>
+         <NavLink key={category.id} to={`/category/${category.slug}`} className="nav-paths-items" aria-current="page">{category.label}</NavLink>
         ))
        
         }

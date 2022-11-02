@@ -7,7 +7,7 @@ import {CartContext} from '../../CartContext/CartContext'
 
 export default function CartWidget() {
     
-    const {totalQuantity, total }=useContext (CartContext)
+    const {totalQuantity}=useContext (CartContext)
     //const quantity =  totalQuantity
   
     
@@ -19,7 +19,7 @@ export default function CartWidget() {
             <img className = "imagenCarrito" src={Cart} alt="carrito"/>
             <span id="contador1">{totalQuantity}</span>
             <div id="cartTotalPrice">
-            ${total}
+            
             </div>
         </button>  
     </NavLink>

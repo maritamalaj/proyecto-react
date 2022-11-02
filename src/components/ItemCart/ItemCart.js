@@ -1,9 +1,10 @@
 import { useContext } from 'react'
 import './ItemCart.css'
-import {CartContext}from '../../Context/CartContext'
+import {CartContext} from '../../Context/CartContext'
 
-const ItemCart= ({id, name, price, img, quantity})=>{
-    const {removeItem} = useContext (CartContext)
+
+const ItemCart= ({id, name, img, quantity, price })=>{
+    const {removeItem } = useContext (CartContext)
     
     const handleRemove = (id) => {
         removeItem(id)
@@ -21,8 +22,54 @@ const ItemCart= ({id, name, price, img, quantity})=>{
         </tr>
     )
 }
+export default ItemCart
 
+    
+ /*
+   return(
+    <div>
+    <table className="tablaProductos">
+        <tbody>
+            <tr>
+                <td><strong>Cantidad</strong></td>
+                <td><strong>Productos</strong></td>
+                <td><strong>Precio</strong></td>
+                <td><strong>Eliminar</strong></td>
+            </tr>
+            {
+                cart.map(prod => 
+                    <tr key={prod.Id}>
+                        <td className="fila">{prod.quantity}</td>
+                        <td className="fila">{prod.name}</td>
+                        <td className="fila">${prod.price}</td>
+                        <td><button onClick={() => removeItem(prod.Id)}><img  alt="eliminar-producto" src={iconDump}/></button></td>
+                    </tr> 
+                    
+            )}
+        </tbody>
+    </table>
+    <section className="precioTotal">
+        <p>Total: ${total}</p>
+    </section>
+    <section className="containerBotonesCartList">
+    <button className='Space btn btn-primary'  onClick={() =>{ clearCart(cart); alert()}}>Vaciar Carrito</button>
+    <Link to={"/"} className="btn botonVolverALaTienda">Volver a la tienda</Link>
+    <Link to='/checkout' className='Option'>Finalizar Comprar</Link>
+      
+            
+    </section>
+
+</div>
+
+)
+}
+export default ItemCart*/
+
+
+
+
+
+    
     
 
 
-export default ItemCart

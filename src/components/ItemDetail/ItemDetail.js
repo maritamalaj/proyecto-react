@@ -15,11 +15,11 @@ const ItemDetail = ({ id, name, img, category, description, price, stock}) => {
     const handleOnAdd = (quantity) => {
        // setGoCart (true)
         const productToAdd = {
-            id, name, price, img
+            id, name, price, img,quantity
             //agregar SWEETALRERT! ('success', `Se agrego correctamente ${quantity} ${name}`)
         }
     
-        addItem (productToAdd, quantity)
+        addItem (productToAdd)
        
       
     }
