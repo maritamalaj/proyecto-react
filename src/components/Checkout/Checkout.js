@@ -9,20 +9,18 @@ import { useNavigate } from "react-router-dom"
 
 const Checkout = () => {
     const [loading, setLoading] = useState(false)
-
+    const navigate = useNavigate()
     const { cart, totalQuantity, clearCart } = useContext(CartContext)
 
  
     const [name, setName] = useState("");
     const [lastName, setLastName] = useState ("");
+ 
     const [address, setAddress] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
-    const [ coments, setComents] = useState('')
+    const [ coments, setComents] = useState('');
 
-
-
-    const navigate = useNavigate()
 
     const createOrder = async () => {
         setLoading(true)

@@ -12,7 +12,7 @@ import iconDump from './assets/dump.png'
 
 const Cart = ()=> {
 
-  const {cart, totalQuantity , total, clearCart,removeItem} =useContext(CartContext)
+  const {cart, totalQuantity , getTotal, clearCart,removeItem} =useContext(CartContext)
 
   if(totalQuantity === 0) {
     return (
@@ -61,10 +61,10 @@ const Cart = ()=> {
             </tbody>
         </table>
         <section className="precioTotal">
-            <p>Total: ${total}</p>
+            <p>Total: ${getTotal(cart)}</p>
         </section>
         <section className="containerBotonesCartList">
-        <button className='css-button-arrow--black'  onClick={() =>{ clearCart(); alert()}}>Vaciar Carrito</button>
+        <button className='css-button-arrow--black'  onClick={() =>{ clearCart(cart); alert()}}>Vaciar Carrito</button>
         <Link to={"/"} className="css-button-arrow--black">Volver a la tienda</Link>
         <Link to='/checkout' className='css-button-arrow--black'>Finalizar Comprar</Link>
           
