@@ -37,10 +37,10 @@ const ItemCount = ({stock , initial=1 , onAdd}) => {
                 <h2 className="elements">{quantity}</h2>
                 <button  className="elements" onClick={increment}> + </button>
             </div>
-            <div>
+            <div className='contador-footer'>
                 <button className="botonTerminarCompra btn btn-outline-secundary" disabled= {stock <=0} type ="button" onClick={() => onAdd(quantity)}>Agregar al carrito</button>
                 <button className="botonTerminarCompra btn btn-outline-secundary" id='button1'   onClick={empty}>Eliminar</button>
-                <Link to={'/category/ ${category}'} className="btn btn-dark" id='button'  >Volver</Link>
+                <Link to={'/'} className="botonTerminarCompra btn btn-outline-secundary" id='button'>Seguir Comprando</Link>
             </div>
         </div>
     )

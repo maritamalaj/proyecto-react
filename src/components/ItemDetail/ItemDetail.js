@@ -50,7 +50,7 @@ const ItemDetail = ({ id, name, img, category, description, price, stock}) => {
                 : <p>No hay stock</p>}
                 {
                     
-                        isInCart(id) && <Link to='/cart' className='botonTerminarCompra btn btn-outline-secundary' >Finalizar compra</Link>
+                isInCart(id) && <Link to='/cart' className='botonTerminarCompra btn btn-outline-secundary' >Finalizar compra</Link>
                 }
                 
             </footer>

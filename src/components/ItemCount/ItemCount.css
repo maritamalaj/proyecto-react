@@ -1,6 +1,6 @@
 .contador{
     width: fit-content;
-    background-color: rgba(128, 128, 128, 0.369);
+    background-color: rgba(128, 128, 128/0%);
     margin: auto;
     padding: 1rem;
     text-align: center;
@@ -12,6 +12,8 @@
 .elements {
     margin:10px;
 }
+
+
 
 a.botonTerminarCompra {
     margin-top: 3rem;

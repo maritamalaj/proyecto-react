@@ -2,7 +2,7 @@ import "./navbar.css";
 import logo from "./assets/logo.png";
 import { NavLink } from "react-router-dom"
 import CartWidget from "../CartWidget/CartWidget"
-import { getDocs, collection,query,orderBy } from "firebase/firestore";
+import { getDocs, collection,query} from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { db } from "../../services/firebase";
 
@@ -11,7 +11,7 @@ const Navbar = () => {
 
     useEffect(()=>{
     
-        const collectionRef = query (collection(db, 'categories'), orderBy("order"));
+        const collectionRef = query (collection(db, 'categories'));
 
         getDocs(collectionRef).then(response =>{
             const categoriesAdapted = response.docs.map(doc => {
@@ -41,8 +41,7 @@ const Navbar = () => {
       <div className="nav-paths ">
         {
           categories.map(category=>(
-        
-         <NavLink key={category.id} to={`/category/${category.slug}`} className="nav-paths-items" aria-current="page">{category.label}</NavLink>
+          <NavLink key={category.id} to={`/category/${category.label}`} className="nav-paths-items" aria-current="page"> {category.slug}</NavLink>
         ))
        
         }
@@ -69,54 +68,6 @@ const Navbar = () => {
 
 
   
-   /* return(
-      <div>
-      <header>
-     
-        <div className="img-logo">
-          <img src={logo} alt="logo" width="150" />
-        </div>
-        <nav>
-          <ul>
-            <li>
-              <a href="#">Inicio</a>
-            </li>
-            <li>
-            <Link to={"/"}>Productos</Link>
-            </li>
-            <li>
-              <a href="#">Contáctanos</a>
-            </li>
-            <div className="Cart">
-              <box-icon color="white"name="cart-alt"></box-icon>
-              <span className="item_total">1</span>
-            </div>
-          </ul>
-        </nav>
-      </header>
-    </div>
-    
-    -----------------------------------------------------
-
-
-     <Link to="/" className="nav-paths-items">
-           Home
-        </Link>
-        <Link to="/category/Espejos" className="nav-paths-items">
-            Espejos
-        </Link>
-        <Link to="/category/Habitación" className="nav-paths-items">
-            Deco&Habitación
-        </Link>
-        <Link to="/category/Deco" className="nav-paths-items">
-          Deco&Bazar
-        </Link>
-        
-    
-    
-    
-    
-    */
 
   
 

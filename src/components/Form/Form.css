@@ -1,0 +1,73 @@
+.form-container {
+    width: 100%;
+    height: auto;
+    min-height: 450px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}    
+    
+
+.chekform{
+    display: flex;
+        flex-direction: column;
+        align-items: center;
+
+}
+
+.chekform textarea{
+            width: 35%;
+            height: 150px;
+            font-family: 'Mitr', sans-serif;
+            padding: 12px 20px;
+            box-sizing: border-box;
+            border: 1px solid black;
+            border-radius: 4px;
+            resize: none;
+}
+
+
+.chekform input{
+            width: 35%;
+            border: 1px solid black;
+            padding: 12px 20px;
+            box-sizing: border-box;
+            font-family: 'Mitr', sans-serif;
+            border: solid #2c3e50 1px;
+            border-radius: 10px;
+
+
+}
+
+.btn-orden {
+            width: auto;
+            height: auto;
+            margin-top: 10px;
+            font-family: 'Mitr', sans-serif;
+            background: #3A7B99;
+            background-image: -webkit-linear-gradient(top, #c7b7b0, #d8a790);
+            background-image: -moz-linear-gradient(top#c7b7b0, #d8a790);
+            background-image: -ms-linear-gradient(top, #c7b7b0 #d8a790);
+            background-image: -o-linear-gradient(top, #c7b7b0,  #d8a790);
+            background-image: linear-gradient(to bottom, #c7b7b0,  #d8a790);
+            -webkit-border-radius: 25;
+            -moz-border-radius: 25;
+            border-radius: 25px;
+            color: #FCF7F4;
+            font-size: 14px;
+            padding: 5px 15px 5px 15px;
+            border: solid  #d8a790 1px;
+            text-decoration: none;
+    
+            
+        
+
+}
+.form-label {
+    margin-top: 10px;
+    margin-bottom: 1px;
+    font-size: 16px;
+    color: black;
+    display: inline-block;
+    font-family: sans-serif;
+}

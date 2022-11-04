@@ -1,0 +1,25 @@
+.Footer ul {
+    
+    background-color: #d8a790;
+    display: flex;
+    border-bottom: 2px solid grey;
+    box-shadow: 5px 0 10px rgba(0, 0, 0, 6);
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 0;
+    list-style-type: none;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+    padding: 1.2rem;
+    gap: 2rem;
+}    
+
+.Footer    li {
+        font-size: 15px;
+        margin: 5px;
+        color: #FCF7F4;
+        font-family: 'Mitr', sans-serif;
+        text-decoration: none;
+}
+
