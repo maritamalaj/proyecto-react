@@ -27,35 +27,29 @@ const BuyerForm = ({completeDates})=>{
     if (!name || !email || !phone || !address)
         {
             Swal.fire({
-                title: "Completa tus datos",
+                title: "complete con sus datos correctamente",
                 icon: "warning",
-                buttons: true,
                 dangerMode: true,
         
             })
         }
         else if (email != validateEmail && email && validateEmail) { //eslint-disable-line
             Swal.fire({
-            title: "Los emails no coinciden",
+            title: "Los mails deben ser iguales ",
             html: "Por favor, intente nuevamente",
-            buttons: true,
             dangerMode: true,
         })
     }
 
     else {
         Swal.fire({
-            title: "Datos Guardados",
+            title: "Sus  datos fueron Guardados exitosamente",
             icon: "success",
             buttons: true,
         })
 
     completeDates(
-        name,
-        lastName,
-        address,
-        phone,
-        email
+        name, lastName,address,phone,email
     )
     }
     }

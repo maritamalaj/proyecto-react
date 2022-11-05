@@ -1,44 +1,37 @@
 import { Link } from 'react-router-dom';
 import {CartContext} from '../../CartContext/CartContext'
 import { useContext } from 'react';
-
-
 import  './Cart.css'
-
 import iconDump from './assets/dump.png'
+import swal from 'sweetalert'
 
 
 
 
 const Cart = ()=> {
 
-  const {cart, totalQuantity , getTotal, clearCart,removeItem} =useContext(CartContext)
-
-  if(totalQuantity === 0) {
-    return (
-        <div>
-    <h1>No hay Productos en el carrito</h1>
-                <Link to="/">
-                    <button className="css-button-arrow--black">Volver a la Tienda</button>
-                </Link>
-        </div>
-    
-    )
-}
-
+  const {cart,  getTotal, clearCart,removeItem} =useContext(CartContext)
   
 
-     if (cart.length === 0) {
+    const alert = () =>{
+     swal({
+      title:"Ha vaciado el carrito", 
+      icon: "warning",
+      dangerMode: true,
+     }) }
+
+    if (cart.length === 0) {
       return( 
          <div>
          <h1>El carro esta vacio</h1>
-         <Link className="cartGo" to={'/'}>Volver a la tienda</Link>
+         <Link className="css-button-arrow--black" to={'/'}>Volver a la tienda</Link>
          </div>
       )
-     }
+    }
 
+    
      
-      return (  
+    return (  
         <div>
         <table className="tablaProductos">
             <tbody>
@@ -74,50 +67,19 @@ const Cart = ()=> {
     </div>
     
     )
-    }
-        
-        
-
-  
-  export default Cart
-     
-   
-   
-
-
-
-
-  
-
-  
-
-    
-/*    <div className="card__brand">
-    {cart.map(prod => (
-      <div className="btnGridPos">
-      <h5>Producto {prod.name}</h5>
-      {/* <img src={prod.img} alt="Producto"/> */
-/*      <ul>
-          <li>Total: $ {prod.price * prod.quantity}</li>
-          <li>Cantidad: {prod.quantity}</li>
-          <button className='Space btn btn-danger' onClick={() => removeItem(prod.id)}>Eliminar Producto</button>
-      </ul>
-     
-
-     </div>
-    ))}
-      
-    
-
-    <button className='Space btn btn-primary'  onClick={() =>{ clearCart(cart); alert()}}>Vaciar Carrito</button>
-    <Link to={"/"} className="btn botonVolverALaTienda">Volver a la tienda</Link>
-    <Link to='/checkout' className='Option'>Finalizar Comprar</Link>
-      
-</div>
-  )
-
 }
+  
+export default Cart
+     
+   
+   
 
- 
- export default Cart*/
- 
+
+
+
+  
+
+  
+
+    
+

@@ -15,7 +15,7 @@ const ItemCount = ({stock , initial=1 , onAdd}) => {
     }
 
     const decrement = () => {
-        if (quantity > 0) {
+        if (quantity > 1) {
             setQuantity(quantity -1)
          }
 
