@@ -3,20 +3,20 @@ import ItemCount from '../ItemCount/ItemCount'
 import {Link} from 'react-router-dom'
 import { useContext } from 'react'
 import {CartContext} from '../../CartContext/CartContext'
-//import swal from 'sweetalert'
+
 
 const ItemDetail = ({ id, name, img, category, description, price, stock}) => {
-    //const [goCart, setGoCart] = useState (false)
+    
 
     const { addItem, isInCart, getProductQuantity } = useContext(CartContext)
 
 
 
     const handleOnAdd = (quantity) => {
-       // setGoCart (true)
+    
         const productToAdd = {
             id, name, price, img,quantity
-            //agregar SWEETALRERT! ('success', `Se agrego correctamente ${quantity} ${name}`)
+            
         }
     
         addItem (productToAdd)
@@ -70,15 +70,4 @@ const ItemDetail = ({ id, name, img, category, description, price, stock}) => {
 
 
 
-  /*
-            {goCart ? 
-            <div className='detalleBotonera'>
-            <Link to='/'>
-                <button>Seguir comprando</button>
-            </Link>
-            <Link to='/cart'>
-                <button>Finalizar compra</button>
-            </Link>
-        </div>
-        :
-        <div className='contadorDetalle'> <ItemCount  onAdd={handleOnAdd} initial={quantityToAdded} stock={stock} /> </div>*/
+  

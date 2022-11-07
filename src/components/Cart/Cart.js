@@ -10,8 +10,8 @@ import swal from 'sweetalert'
 
 const Cart = ()=> {
 
-  const {cart,  getTotal, clearCart,removeItem} =useContext(CartContext)
-  
+  //const {cart,  getTotal, clearCart,removeItem} =useContext(CartContext)
+  const {cart, totalQuantity, total, clearCart,removeItem} = useContext(CartContext)
 
     const alert = () =>{
      swal({
@@ -20,7 +20,7 @@ const Cart = ()=> {
       dangerMode: true,
      }) }
 
-    if (cart.length === 0) {
+    if (totalQuantity === 0) {
       return( 
          <div>
          <h1>El carro esta vacio</h1>
@@ -54,7 +54,7 @@ const Cart = ()=> {
             </tbody>
         </table>
         <section className="precioTotal">
-            <p>Total: ${getTotal(cart)}</p>
+            <p>Total: ${total}</p>
         </section>
         <section className="containerBotonesCartList">
         <button className='css-button-arrow--black'  onClick={() =>{ clearCart(cart); alert()}}>Vaciar Carrito</button>

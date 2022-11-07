@@ -61,16 +61,16 @@ const BuyerForm = ({completeDates})=>{
     <form className="myForm">
     <div className='chekform' >
         <label  className="form-label">Nombre</label>
-        <input type="text" className="form-control" id="exampleFormControlInput1" value={name} onChange={(e) => setName(e.target.value)}   placeholder="Nombre" required />
+        <input type="text" className="form-control" id="exampleFormControlInput1" value={name} pattern="[a-zA-Z ]{1,35}" onChange={(e) => setName(e.target.value)}   placeholder="Nombre" required />
         
         <label  className="form-label">Apellido</label>
-        <input type="text" className="form-control" id="exampleFormControlInput1" value={lastName} onChange={(e) => setLastName(e.target.value)}   placeholder="Apellido" required />
+        <input type="text" className="form-control" id="exampleFormControlInput1" value={lastName} pattern="[a-zA-Z ]{1,35}" onChange={(e) => setLastName(e.target.value)}   placeholder="Apellido" required />
        
         <label  className="form-label">Telefono</label>
-        <input type="number" className="form-control" id="exampleFormControlInput1" value={phone} onChange={(e) => setPhone(e.target.value)}   placeholder="Teléfono"required />
+        <input type="number" className="form-control" id="exampleFormControlInput1" value={phone} pattern="[0-9]" onChange={(e) => setPhone(e.target.value)}   placeholder="Teléfono"required />
 
         <label  className="form-label">Direccion</label>
-        <input type="text" className="form-control" id="exampleFormControlInput1" value={address} onChange={(e) => setAddress(e.target.value)}   placeholder="Dirección"required />
+        <input type="text" className="form-control" id="exampleFormControlInput1" value={address} pattern="[a-zA-Z ]{1,35}" onChange={(e) => setAddress(e.target.value)}   placeholder="Dirección"required />
         
         <label  className="form-label">Email</label>
         <input type="email" className="form-control" value={email} onChange={(e) => setEmail(e.target.value)}   id="exampleFormControlInput1" placeholder="Email" required/>

@@ -8,7 +8,7 @@ import {CartContext} from '../../CartContext/CartContext'
 export default function CartWidget() {
     
     const {totalQuantity}=useContext (CartContext)
-    //const quantity =  totalQuantity
+
   
     
 

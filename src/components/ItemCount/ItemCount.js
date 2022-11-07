@@ -21,9 +21,7 @@ const ItemCount = ({stock , initial=1 , onAdd}) => {
 
     }
 
-    const empty = () =>{
-        setQuantity(quantity === 1)
-    }
+   
 
 
 
@@ -39,7 +37,7 @@ const ItemCount = ({stock , initial=1 , onAdd}) => {
             </div>
             <div className='contador-footer'>
                 <button className="botonTerminarCompra btn btn-outline-secundary" disabled= {stock <=0} type ="button" onClick={() => onAdd(quantity)}>Agregar al carrito</button>
-                <button className="botonTerminarCompra btn btn-outline-secundary" id='button1'   onClick={empty}>Eliminar</button>
+               
                 <Link to={'/'} className="botonTerminarCompra btn btn-outline-secundary" id='button'>Seguir Comprando</Link>
             </div>
         </div>
